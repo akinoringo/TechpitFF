@@ -4,9 +4,41 @@ class Enemy
 {
   // プロパティ
   const MAX_HITPOINT = 50;
-  public $name;
-  public $hitPoint = 50;
-  public $attackPoint = 10;
+  private $name;
+  private $hitPoint = 50;
+  private $attackPoint = 10;
+
+  /**
+   * Constructor
+   */
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
+
+  /**
+   * Getter for Name
+   */
+  public function getName()
+  {
+    return $this->name;
+  }
+
+  /**
+   * Getter for Name
+   */
+  public function getHitPoint()
+  {
+    return $this->hitPoint;
+  }
+
+  /**
+   * Getter for Name
+   */
+  public function getAttackPoint()
+  {
+    return $this->attackPoint;
+  }
 
   /**
    * Attack Method
@@ -14,7 +46,7 @@ class Enemy
   public function doAttack($human)
   {
     echo $this->name . "の攻撃!\n";
-    echo $human->name . "へ" . $this->attackPoint . "のダメージ!\n";
+    echo $human->getName() . "へ" . $this->attackPoint . "のダメージ!\n";
     $human->receiveDamage($this->attackPoint);
   }
 
