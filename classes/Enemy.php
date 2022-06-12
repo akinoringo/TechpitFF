@@ -56,6 +56,8 @@ class Enemy
     echo $this->name . "の攻撃!\n";
     echo $human->getName() . "へ" . $this->attackPoint . "のダメージ!\n";
     $human->receiveDamage($this->attackPoint);
+
+    return true;
   }
 
   /**

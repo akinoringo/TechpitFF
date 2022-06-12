@@ -29,5 +29,7 @@ class WhiteMage extends Human
     } else {
       parent::doAttack($enemies);
     }
+
+    return true;
   }
 }

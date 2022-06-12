@@ -31,5 +31,7 @@ class Brave extends Human
     } else {
       parent::doAttack($enemies);
     }
+
+    return true;
   }
 }

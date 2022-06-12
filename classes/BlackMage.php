@@ -29,5 +29,7 @@ class BlackMage extends Human
     } else {
       parent::doAttack($enemies);
     }
+
+    return true;
   }
 }
