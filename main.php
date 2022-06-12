@@ -1,13 +1,10 @@
 <?php
 
 // ファイルのロード
-require_once('./classes/Lives.php');
-require_once('./classes/Human.php');
-require_once('./classes/Enemy.php');
-require_once('./classes/Brave.php');
-require_once('./classes/BlackMage.php');
-require_once('./classes/WhiteMage.php');
-require_once('./classes/Message.php');
+require_once('./lib/Loader.php');
+$loader = new Loader();
+$loader->registerDirectory(__DIR__ . '/classes');
+$loader->register();
 
 // インスタンス化
 $members = array();
