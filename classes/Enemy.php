@@ -44,8 +44,15 @@ class Enemy
   /**
    * Attack Method
    */
-  public function doAttack($human)
+  public function doAttack($humans)
   {
+    if ($this->getHitPoint() <= 0) {
+      return false;
+    }
+
+    $humanIndex = rand(0, count($humans) - 1);
+    $human = $humans[$humanIndex];
+
     echo $this->name . "の攻撃!\n";
     echo $human->getName() . "へ" . $this->attackPoint . "のダメージ!\n";
     $human->receiveDamage($this->attackPoint);
