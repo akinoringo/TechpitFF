@@ -6,18 +6,19 @@ require_once('./lib/Utility.php');
 
 $loader = new Loader();
 $loader->registerDirectory(__DIR__ . '/classes');
+$loader->registerDirectory(__DIR__ . '/classes/constants');
 $loader->register();
 
 // インスタンス化
 $members = array();
-$members[] = new Brave('ティーダ');
-$members[] = new WhiteMage('ユウナ');
-$members[] = new BlackMage('ルールー');
+$members[] = new Brave(CharacterName::TIIDA);
+$members[] = new WhiteMage(CharacterName::YUNA);
+$members[] = new BlackMage(CharacterName::RULU);
 
 $enemies = array();
-$enemies[] = new Enemy('ゴブリン', 20);
-$enemies[] = new Enemy('ボム', 25);
-$enemies[] = new Enemy('モルボブ', 30);
+$enemies[] = new Enemy(EnemyName::GOBLIN, 20);
+$enemies[] = new Enemy(EnemyName::BOMB, 25);
+$enemies[] = new Enemy(EnemyName::MORBOL, 30);
 
 $turn = 1;
 
